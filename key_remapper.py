@@ -2,6 +2,7 @@
 
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
+import time
 
 kb=keyboard.Controller()
 
@@ -14,6 +15,7 @@ def darwin_intercept(event_type, event):
         event, 100, None, None)
     if length > 0 and chars == 'v':
         kb.press("7")
+        time.sleep(0.1)
         kb.release("7")
         return None
     else:
